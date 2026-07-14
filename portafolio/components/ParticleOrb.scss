@@ -1,0 +1,67 @@
+// ParticleOrb.scss
+@use "sass:math"; // 1. Importamos el módulo matemático para evitar el Warning
+
+// Configuraciones de la animación
+$total: 300; // total particles
+$orb-size: 150px; 
+$particle-size: 3px; 
+$time: 20s; 
+$base-hue: 260; // Tono Púrpura
+
+// Contenedor principal de la animación
+.wrapParticles {
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: rotateOrb $time infinite linear;
+}
+
+@keyframes rotateOrb {
+  100% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
+
+// Estilo base de cada partícula
+.particula {
+  position: absolute;
+  width: $particle-size;
+  height: $particle-size;
+  border-radius: 50%;
+  opacity: 0;
+  will-change: transform, opacity; // 3. Ayuda al navegador a renderizar con aceleración por hardware
+}
+
+// Bucle SASS optimizado
+@for $i from 1 through $total {
+  // Usamos math.random en lugar de random global
+  $z: (math.random(360) * 1deg); 
+  $y: (math.random(360) * 1deg); 
+  $hue: ((40/$total * $i) + $base-hue); 
+
+  .particula:nth-child(#{$i}){
+    animation: orbit#{$i} $time infinite;
+    animation-delay: ($i * 0.01s); 
+    background-color: hsla($hue, 100%, 70%, 1);
+    box-shadow: 0 0 8px hsla($hue, 100%, 70%, 0.6); 
+  }
+
+  @keyframes orbit#{$i}{
+    15% {
+      opacity: 1; 
+    }
+    30% {
+      transform: rotateZ(-$z) rotateY($y) translateX($orb-size) rotateZ($z);
+    }
+    75% {
+      transform: rotateZ(-$z) rotateY($y) translateX($orb-size) rotateZ($z);
+      opacity: 1;
+    }
+    100% {
+       transform: rotateZ(-$z) rotateY($y) translateX(($orb-size * 1.8)) rotateZ($z);
+       opacity: 0;
+    }
+  }
+}
