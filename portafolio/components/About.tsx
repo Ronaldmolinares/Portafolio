@@ -38,7 +38,7 @@ export default function About() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 lg:pt-4"
                     >
-                        <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-indigo-400 leading-tight">
+                        <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-white via-purple-200 to-indigo-400 leading-tight">
                             About Me
                         </h2>
                         {/* Breve biografía */}
@@ -62,7 +62,7 @@ export default function About() {
                     >
                         {/* 1. Foto de perfil (Centrada gracias al contenedor padre items-center) */}
                         <div className="relative group">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full blur opacity-45 group-hover:opacity-75 transition duration-500" />
+                            <div className="absolute -inset-1 bg-linear-to-r from-purple-600 to-indigo-600 rounded-full blur opacity-45 group-hover:opacity-75 transition duration-500" />
                             <div className="relative w-28 h-28 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-slate-800 bg-slate-900">
                                 <img
                                     src="/me.png" // Ubicación: public/tu-foto.jpg
@@ -131,7 +131,7 @@ export default function About() {
                                 href="/Ronald_Molinares_CV.pdf" // Ubicación: public/tu-cv.pdf
                                 download
                                 // 1. Añadimos flex, items-center, justify-center y gap-2
-                                className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-atkinson font-medium rounded-sm shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_25px_rgba(147,51,234,0.5)] transition-all duration-300 text-center"
+                                className="flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-atkinson font-medium rounded-sm shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_25px_rgba(147,51,234,0.5)] transition-all duration-300 text-center"
                             >
                                 <FileDown className="w-5 h-5" />
                                 <span>Descargar hoja de vida</span>

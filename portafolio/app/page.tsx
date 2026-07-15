@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Hero from "@/components/Hero";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       {/* Aquí iremos colocando las secciones de tu portafolio */}
       <Hero />
       <About />
+      <Projects />
       {/* La sección de proyectos irá aquí abajo en el futuro */}
     </main>
   );
