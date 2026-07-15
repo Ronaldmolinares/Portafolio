@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { X, ExternalLink, Calendar, Users, Cpu, Tag } from "lucide-react";
 import { FaGithub } from 'react-icons/fa6';
 import { Project } from "./projectsData";
+import ProjectImageCarousel from "./ProjectImageCarousel";
 
 interface ProjectDetailModalProps {
     project: Project;
@@ -46,11 +47,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                         <div className="space-y-6">
                             {/* Vista previa de la primera imagen */}
                             <div className="aspect-16/10 w-full rounded-xl overflow-hidden border border-slate-800 bg-slate-900 shadow-md">
-                                <img
-                                    src={project.images[0]}
-                                    alt={project.title}
-                                    className="w-full h-full object-cover"
-                                />
+                                <ProjectImageCarousel images={project.images} alt={project.title} intervalMs={4000} />
                             </div>
 
                             {/* Compañeros de Trabajo / Equipo */}

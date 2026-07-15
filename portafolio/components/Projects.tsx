@@ -1,36 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Plus, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Plus } from "lucide-react";
 import { FaGithub } from 'react-icons/fa6';
 import { PROJECTS, Project } from "./projectsData"; // Ajusta la ruta de importación
 import ProjectDetailModal from "./ProjectDetailModal";
+import ProjectImageCarousel from "./ProjectImageCarousel";
 
 export default function Projects() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-    const [activeImageIndexes, setActiveImageIndexes] = useState<{ [key: number]: number }>({});
-
-    // Funciones para manejar el carrusel de cada proyecto de forma independiente
-    const handlePrevImage = (projectId: number, imagesLength: number) => {
-        setActiveImageIndexes((prev) => {
-            const currentIndex = prev[projectId] ?? 0;
-            return {
-                ...prev,
-                [projectId]: currentIndex === 0 ? imagesLength - 1 : currentIndex - 1,
-            };
-        });
-    };
-
-    const handleNextImage = (projectId: number, imagesLength: number) => {
-        setActiveImageIndexes((prev) => {
-            const currentIndex = prev[projectId] ?? 0;
-            return {
-                ...prev,
-                [projectId]: currentIndex === imagesLength - 1 ? 0 : currentIndex + 1,
-            };
-        });
-    };
 
     return (
         <section id="projects" className="py-20 lg:py-32 px-6 lg:px-10 bg-slate-950 text-white border-t border-slate-900">
@@ -60,18 +39,15 @@ export default function Projects() {
 
                 {/* Lista de Proyectos */}
                 <div className="space-y-32">
-                    {PROJECTS.map((project, index) => {
-                        const currentImgIndex = activeImageIndexes[project.id] ?? 0;
-
-                        return (
-                            <motion.div
-                                key={project.id}
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ duration: 0.7, delay: index * 0.1 }}
-                                className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"
-                            >
+                    {PROJECTS.map((project, index) => (
+                        <motion.div
+                            key={project.id}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 0.7, delay: index * 0.1 }}
+                            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"
+                        >
                                 {/* --- COLUMNA IZQUIERDA: DETALLES BÁSICOS (7 Columnas) --- */}
                                 <div className="lg:col-span-7 space-y-6">
                                     {/* Número de proyecto e Info de categoría */}
@@ -135,77 +111,23 @@ export default function Projects() {
                                 </div>
 
                                 {/* --- COLUMNA DERECHA: CARRUSEL VISUAL (5 Columnas) --- */}
-                                <div className="lg:col-span-5 w-full relative group">
+                                <div className="lg:col-span-5 w-full">
                                     <div className="relative aspect-16/10 w-full rounded-xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
-                                        {/* Renderizado de la Imagen Activa con transición suave */}
-                                        <AnimatePresence mode="wait">
-                                            <motion.img
-                                                key={currentImgIndex}
-                                                src={project.images[currentImgIndex]}
-                                                alt={`${project.title} screenshot`}
-                                                initial={{ opacity: 0, scale: 1.02 }}
-                                                animate={{ opacity: 1, scale: 1 }}
-                                                exit={{ opacity: 0 }}
-                                                transition={{ duration: 0.3 }}
-                                                className="w-full h-full object-cover"
-                                            />
-                                        </AnimatePresence>
-
-                                        {/* Overlay de degradado para los botones laterales */}
-                                        <div className="absolute inset-0 bg-linear-to-t from-slate-950/45 via-transparent to-transparent pointer-events-none" />
-
-                                        {/* Botones de Navegación del Carrusel */}
-                                        {project.images.length > 1 && (
-                                            <>
-                                                <button
-                                                    onClick={() => handlePrevImage(project.id, project.images.length)}
-                                                    className="absolute left-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-slate-950/80 hover:bg-slate-900 border border-slate-800/80 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                                                >
-                                                    <ChevronLeft className="w-5 h-5" />
-                                                </button>
-                                                <button
-                                                    onClick={() => handleNextImage(project.id, project.images.length)}
-                                                    className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-slate-950/80 hover:bg-slate-900 border border-slate-800/80 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                                                >
-                                                    <ChevronRight className="w-5 h-5" />
-                                                </button>
-                                            </>
-                                        )}
-
-                                        {/* Indicadores de Puntos (Bullets) en la parte inferior */}
-                                        {project.images.length > 1 && (
-                                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
-                                                {project.images.map((_, dotIndex) => (
-                                                    <button
-                                                        key={dotIndex}
-                                                        onClick={() =>
-                                                            setActiveImageIndexes((prev) => ({ ...prev, [project.id]: dotIndex }))
-                                                        }
-                                                        className={`h-1.5 rounded-full transition-all duration-300 ${currentImgIndex === dotIndex
-                                                                ? "w-4 bg-purple-500"
-                                                                : "w-1.5 bg-slate-500/60 hover:bg-slate-400"
-                                                            }`}
-                                                    />
-                                                ))}
-                                            </div>
-                                        )}
+                                        <ProjectImageCarousel images={project.images} alt={`${project.title} screenshot`} />
                                     </div>
                                 </div>
-                            </motion.div>
-                        );
-                    })}
+                        </motion.div>
+                    ))}
                 </div>
             </div>
 
             {/* --- MODAL DETALLADO (Portal animado) --- */}
-            <AnimatePresence>
-                {selectedProject && (
-                    <ProjectDetailModal
-                        project={selectedProject}
-                        onClose={() => setSelectedProject(null)}
-                    />
-                )}
-            </AnimatePresence>
+            {selectedProject && (
+                <ProjectDetailModal
+                    project={selectedProject}
+                    onClose={() => setSelectedProject(null)}
+                />
+            )}
         </section>
     );
 }
