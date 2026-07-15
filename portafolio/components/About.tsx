@@ -7,7 +7,7 @@ export default function About() {
     return (
         <section
             id="about"
-            className="py-20 lg:py-32 px-6 lg:px-10 relative overflow-hidden bg-slate-950 text-white border-t border-slate-900"
+            className="py-20 lg:py-18 px-6 lg:px-10 relative overflow-hidden bg-slate-950 text-white border-t border-slate-900"
         >
             {/* Fondo decorativo central */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-900/5 rounded-full blur-[120px] pointer-events-none" />

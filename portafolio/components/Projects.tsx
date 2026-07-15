@@ -12,7 +12,7 @@ export default function Projects() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
     return (
-        <section id="projects" className="py-20 lg:py-32 px-6 lg:px-10 bg-slate-950 text-white border-t border-slate-900">
+        <section id="projects" className="py-20 lg:py-14 px-6 lg:px-10 bg-slate-950 text-white border-t border-slate-900">
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -92,7 +92,7 @@ export default function Projects() {
                                     <div className="flex items-center gap-4 pt-4">
                                         <button
                                             onClick={() => setSelectedProject(project)}
-                                            className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-sm font-atkinson rounded-lg flex items-center gap-2 transition duration-200"
+                                            className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-sm font-atkinson rounded-lg flex items-center gap-2 transition duration-200 cursor-pointer"
                                         >
                                             <Plus className="w-4 h-4 text-purple-400" />
                                             Conoce más

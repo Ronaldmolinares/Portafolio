@@ -65,6 +65,13 @@ export default function Hero() {
                             whileHover={{ scale: 1.02 }} /* Reducido a 1.02 para que sea más sutil y elegante */
                             whileTap={{ scale: 0.98 }}
                             href="#projects"
+                            onClick={(event) => {
+                                event.preventDefault();
+                                document.getElementById("projects")?.scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "start",
+                                });
+                            }}
                             className="px-6 py-3 bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-atkinson font-medium rounded-sm shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_25px_rgba(147,51,234,0.5)] transition-all duration-300 text-center"
                         >
                             Ver mis proyectos &rarr;
@@ -88,7 +95,7 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.8 }}
-                    className="flex justify-center items-center h-[300px] lg:h-[500px] order-1 lg:order-2 relative"
+                    className="flex justify-center items-center h-75 lg:h-125 order-1 lg:order-2 relative"
                 >
                     {/* Este div es el contenedor '.wrap' del código original, posicionado en el centro */}
                     <div className="wrapParticles">
