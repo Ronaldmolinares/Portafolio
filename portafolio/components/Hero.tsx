@@ -9,8 +9,17 @@ export default function Hero() {
     const totalParticulas = 300;
     const particulasArray = Array.from({ length: totalParticulas });
 
+    // Función para manejar el scroll suave
+    const handleScrollToAbout = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        event.preventDefault();
+        document.getElementById("about")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
+    };
+
     return (
-        <section className="flex min-h-[90vh] items-center justify-center px-6 lg:px-10 relative overflow-hidden bg-slate-950 text-white">
+        <section className="flex min-h-[95vh] lg:min-h-screen items-center justify-center px-6 lg:px-10 relative overflow-hidden bg-slate-950 text-white pb-24 lg:pb-0">
 
             {/* Fondo con un sutil gradiente moderno (mantenido) */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,119,198,0.12),transparent_60%)]" />
@@ -18,7 +27,7 @@ export default function Hero() {
             {/* 2. Contenedor Principal: Cambia a 2 columnas en Desktop (lg) */}
             <div className="z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full max-w-7xl">
 
-                {/* --- COLUMNA IZQUIERDA: TEXTO (Casi igual, alineado a la izquierda en desktop) --- */}
+                {/* --- COLUMNA IZQUIERDA: TEXTO --- */}
                 <div className="space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start order-2 lg:order-1">
                     {/* Badge animado */}
                     <motion.span
@@ -35,13 +44,12 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight bg-clip-text text-transparent bg-linear-to-r from-white via-purple-200 to-purple-400 leading-tight"
+                        className="font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-purple-400 leading-tight"
                     >
                         Hola, soy
                         <br />
                         Samir Molinares
                     </motion.h1>
-
 
                     {/* Descripción */}
                     <motion.p
@@ -62,7 +70,7 @@ export default function Hero() {
                     >
                         {/* Botón Principal*/}
                         <motion.a
-                            whileHover={{ scale: 1.02 }} /* Reducido a 1.02 para que sea más sutil y elegante */
+                            whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             href="#projects"
                             onClick={(event) => {
@@ -72,7 +80,7 @@ export default function Hero() {
                                     block: "start",
                                 });
                             }}
-                            className="px-6 py-3 bg-linear-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-atkinson font-medium rounded-sm shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_25px_rgba(147,51,234,0.5)] transition-all duration-300 text-center"
+                            className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-atkinson font-medium rounded-sm shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:shadow-[0_0_25px_rgba(147,51,234,0.5)] transition-all duration-300 text-center"
                         >
                             Ver mis proyectos &rarr;
                         </motion.a>
@@ -106,6 +114,40 @@ export default function Hero() {
                 </motion.div>
 
             </div>
+
+            {/* --- INDICADOR DE SCROLL ANIMADO --- */}
+            <motion.a
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1 }}
+                href="#about"
+                onClick={handleScrollToAbout}
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 group cursor-pointer"
+            >
+
+                {/* MOUSE COMPLETO - Ahora anima su posición Y su color de borde al mismo tiempo */}
+                <motion.div
+                    animate={{
+                        y: [0, -8, 0], // Movimiento de salto
+                        borderColor: [
+                            "rgba(51, 65, 85, 0.8)",   // Gris slate-700/80 original
+                            "rgba(168, 85, 247, 0.6)",  // Púrpura brillante purple-500/60
+                            "rgba(51, 65, 85, 0.8)"    // Regresa a gris
+                        ]
+                    }}
+                    transition={{
+                        duration: 1.8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                    }}
+                    className="w-[24px] h-[38px] rounded-full border-2 flex justify-center p-1.5 backdrop-blur-xs bg-slate-950/20"
+                >
+                    {/* Rueda del mouse estática */}
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+                </motion.div>
+
+            </motion.a>
+
         </section>
     );
 }

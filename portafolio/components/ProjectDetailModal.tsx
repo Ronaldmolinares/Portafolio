@@ -34,7 +34,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                 {/* Botón Flotante para Cerrar */}
                 <button
                     onClick={onClose}
-                    className="absolute top-4 right-4 p-2 rounded-full bg-slate-950/50 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white transition duration-200 z-30"
+                    className="absolute top-4 right-4 p-2 rounded-full bg-slate-950/50 hover:bg-slate-800 border border-slate-800 text-slate-400 hover:text-white transition duration-200 z-30 cursor-pointer"
                 >
                     <X className="w-5 h-5" />
                 </button>

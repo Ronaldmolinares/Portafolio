@@ -65,9 +65,9 @@ export default function About() {
                             <div className="absolute -inset-1 bg-linear-to-r from-purple-600 to-indigo-600 rounded-full blur opacity-45 group-hover:opacity-75 transition duration-500" />
                             <div className="relative w-28 h-28 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-slate-800 bg-slate-900">
                                 <img
-                                    src="/me.png" // Ubicación: public/tu-foto.jpg
+                                    src="/me.png" 
                                     alt="Mi Foto de Perfil"
-                                    className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition duration-300"
+                                    className="w-full h-full object-cover hover:grayscale-0 transition duration-300"
                                 />
                             </div>
                         </div>

@@ -2,7 +2,7 @@
 @use "sass:math"; // 1. Importamos el módulo matemático para evitar el Warning
 
 // Configuraciones de la animación
-$total: 300; // total particles
+$total: 320; // total particles
 $orb-size: 150px; 
 $particle-size: 3px; 
 $time: 20s; 
@@ -39,13 +39,13 @@ $base-hue: 260; // Tono Púrpura
   // Usamos math.random en lugar de random global
   $z: (math.random(360) * 1deg); 
   $y: (math.random(360) * 1deg); 
-  $hue: ((40/$total * $i) + $base-hue); 
+  $hue: ((math.div(40, $total) * $i) + $base-hue); 
 
   .particula:nth-child(#{$i}){
     animation: orbit#{$i} $time infinite;
     animation-delay: ($i * 0.01s); 
     background-color: hsla($hue, 100%, 70%, 1);
-    box-shadow: 0 0 8px hsla($hue, 100%, 70%, 0.6); 
+    // box-shadow: 0 0 8px hsla($hue, 100%, 70%, 0.6); 
   }
 
   @keyframes orbit#{$i}{
