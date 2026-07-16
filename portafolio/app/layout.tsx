@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Atkinson_Hyperlegible, Montserrat } from "next/font/google"; 
+import { Atkinson_Hyperlegible, Montserrat } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["400", "700"], 
+  weight: ["400", "700"],
   style: ["normal", "italic"],
 });
 
@@ -30,6 +30,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${montserrat.variable} ${atkinson.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

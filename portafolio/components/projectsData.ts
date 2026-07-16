@@ -123,3 +123,34 @@ export const PROJECTS: Project[] = [
         ],
     },
 ];
+
+
+
+export const OTHER_PROJECTS: Project[] = [
+    {
+        id: 1,
+        title: 'Tic Tac Toe Game',
+        category: 'Desktop • Java • Swing',
+        year: '2023',
+        shortDescription: 'Juego clásico de Tic Tac Toe con dificultad progresiva, persistencia de puntajes y UI personalizada en Swing.',
+        longDescription: 'Un desarrollo clásico de Tic Tac Toe implementado en Java utilizando la librería gráfica Swing. Cuenta con un sistema de renderizado por hilos para evitar lagunas de rendimiento, persistencia de records locales formateados con Gson/JSON, y una curva de velocidad que escala inteligentemente a medida que obtienes puntos.',
+        tags: ['Java', 'Swing', 'Gson', 'JSON'],
+        collaborators: [],
+        github: 'https://github.com/Ronaldmolinares/Tic_Tac_Toe',
+        demo: '',
+        images: [],
+    },
+    {
+        id: 2,
+        title: 'QUYCA',
+        category: 'Raspberry Pi',
+        year: '2025',
+        shortDescription: 'Proyecto académico de Arquitectura de Computadores que integra simulación y desarrollo de soluciones para analizar el funcionamiento, rendimiento y diseño de un sistema capaz de alertar posibles incendios.',
+        longDescription: '',
+        tags: ['Python', 'C++', 'JavaScript', 'HTML'],
+        collaborators: [],
+        github: 'https://github.com/Ronaldmolinares/QUYCA',
+        demo: '',
+        images: [],
+    }
+];
