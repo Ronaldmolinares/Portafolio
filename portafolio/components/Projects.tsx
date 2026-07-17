@@ -51,7 +51,7 @@ export default function Projects() {
                             {/* --- COLUMNA IZQUIERDA: DETALLES BÁSICOS (7 Columnas) --- */}
                             <div className="lg:col-span-7 space-y-6">
                                 {/* Número de proyecto e Info de categoría */}
-                                <div className="flex items-center gap-4 text-slate-500 font-mono text-xs sm:text-sm tracking-widest uppercase">
+                                <div className="flex items-center gap-4 text-slate-500  text-xs sm:text-sm tracking-widest uppercase">
                                     <span className="text-purple-500/80 font-bold">#{String(project.id).padStart(2, "0")}</span>
                                     <span>•</span>
                                     <span>{project.category}</span>
@@ -82,7 +82,7 @@ export default function Projects() {
                                         </span>
                                     ))}
                                     {project.tags.length > 5 && (
-                                        <span className="px-2 py-1 text-xs font-mono text-slate-500">
+                                        <span className="px-2 py-1 font-mono text-xs text-slate-500">
                                             +{project.tags.length - 5}
                                         </span>
                                     )}

@@ -95,7 +95,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                                 {project.category.split(' • ').map((kw) => (
                                     <span
                                         key={kw}
-                                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-purple-950/30 border border-purple-500/20 text-purple-300"
+                                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs bg-purple-950/30 border border-purple-500/20 text-purple-300"
                                     >
                                         <Tag className="w-3 h-3" />
                                         {kw}

@@ -38,7 +38,7 @@ export default function OtherProjects() {
               {/* Columna de Detalles Básicos (md: 9 columnas para dar buen espacio) */}
               <div className="md:col-span-9 space-y-4">
                 {/* Categoría y Año */}
-                <div className="flex items-center gap-3 text-slate-500 font-mono text-xs tracking-wider uppercase">
+                <div className="flex items-center gap-3 text-slate-500 text-xs tracking-wider uppercase">
                   <span className="text-purple-500/80 font-bold">0{index + 1}</span>
                   <span>•</span>
                   <span>{project.category}</span>

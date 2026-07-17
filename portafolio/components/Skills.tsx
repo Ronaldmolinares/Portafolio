@@ -147,7 +147,7 @@ export default function Skills() {
                                             viewport={{ once: true }}
                                             transition={{
                                                 duration: 0.3,
-                                                delay: catIndex * 0.1 + techIndex * 0.04,
+                                                // delay: catIndex * 0.1 + techIndex * 0.04,
                                             }}
                                             whileHover={{
                                                 scale: 1.05,
