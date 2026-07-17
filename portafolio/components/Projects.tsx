@@ -32,7 +32,7 @@ export default function Projects() {
                     viewport={{ once: true }}
                     className="mb-20"
                 >
-                    <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-white via-purple-200 to-indigo-400 leading-tight">
+                    <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-indigo-400 leading-tight">
                         Proyectos
                     </h2>
                 </motion.div>
