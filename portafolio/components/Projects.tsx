@@ -12,7 +12,7 @@ export default function Projects() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
     return (
-        <section id="projects" className="py-20 lg:py-14 px-6 lg:px-10 bg-slate-950 text-white">
+        <section id="projects" className="py-20 lg:py-26 px-6 lg:px-10 bg-slate-950 text-white">
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -113,7 +113,7 @@ export default function Projects() {
 
                             {/* --- COLUMNA DERECHA: CARRUSEL VISUAL (5 Columnas) --- */}
                             <div className="lg:col-span-5 w-full">
-                                <div className="relative aspect-16/10 w-full rounded-md overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
+                                <div className="relative aspect-16/10 w-full rounded-lg overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
                                     <ProjectImageCarousel images={project.images} alt={`${project.title} screenshot`} />
                                 </div>
                             </div>

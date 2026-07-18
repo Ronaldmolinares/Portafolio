@@ -88,7 +88,7 @@ export default function Certifications() {
         <section
             id="certifications"
             ref={sectionRef}
-            className="py-20 lg:py-16 px-6 lg:px-10 bg-slate-950 text-white relative overflow-hidden"
+            className="py-20 lg:py-26 px-6 lg:px-10 bg-slate-950 text-white relative overflow-hidden"
         >
             <div className="max-w-7xl mx-auto relative z-10">
 
