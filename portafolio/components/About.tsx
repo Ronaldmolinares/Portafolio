@@ -40,6 +40,7 @@ export default function About() {
                     >
                         <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-white via-purple-200 to-indigo-400 leading-tight">
                             About Me
+                            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2" />
                         </h2>
                         {/* Breve biografía */}
                         <div className="space-y-4 font-atkinson text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl lg:max-w-none">

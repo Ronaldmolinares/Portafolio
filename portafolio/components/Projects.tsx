@@ -30,11 +30,12 @@ export default function Projects() {
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mb-20"
+                    className="mb-20 text-center"
                 >
                     <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-indigo-400 leading-tight">
                         Proyectos
                     </h2>
+                    <div className="w-24 m-auto h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2" />
                 </motion.div>
 
                 {/* Lista de Proyectos */}
@@ -51,7 +52,7 @@ export default function Projects() {
                             {/* --- COLUMNA IZQUIERDA: DETALLES BÁSICOS (7 Columnas) --- */}
                             <div className="lg:col-span-7 space-y-6">
                                 {/* Número de proyecto e Info de categoría */}
-                                <div className="flex items-center gap-4 text-slate-500  text-xs sm:text-sm tracking-widest uppercase">
+                                <div className="flex items-center gap-4 text-slate-500 text-xs sm:text-sm tracking-widest uppercase">
                                     <span className="text-purple-500/80 font-bold">#{String(project.id).padStart(2, "0")}</span>
                                     <span>•</span>
                                     <span>{project.category}</span>
@@ -112,7 +113,7 @@ export default function Projects() {
 
                             {/* --- COLUMNA DERECHA: CARRUSEL VISUAL (5 Columnas) --- */}
                             <div className="lg:col-span-5 w-full">
-                                <div className="relative aspect-16/10 w-full rounded-xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
+                                <div className="relative aspect-16/10 w-full rounded-md overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
                                     <ProjectImageCarousel images={project.images} alt={`${project.title} screenshot`} />
                                 </div>
                             </div>

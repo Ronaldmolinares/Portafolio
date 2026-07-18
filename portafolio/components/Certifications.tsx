@@ -113,6 +113,7 @@ export default function Certifications() {
                     >
                         Certificaciones
                     </motion.h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mb-4" />
                 </motion.div>
 
                 {/* --- LISTA DE CERTIFICADOS --- */}
@@ -128,7 +129,7 @@ export default function Certifications() {
                             viewport={{ once: true, margin: "-40px" }}
                             transition={{ duration: 0.5, delay: index * 0.05 }}
                             whileHover={{ x: 6, borderColor: "rgba(168, 85, 247, 0.3)" }}
-                            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-6 p-5 sm:p-6 rounded-xl border border-slate-900 bg-slate-950/40 backdrop-blur-xs hover:bg-slate-900/20 transition-all duration-300 cursor-pointer"
+                            className="group flex flex-col sm:flex-row sm:items-center justify-between gap-6 p-5 sm:p-6 rounded-md border border-slate-900 bg-slate-950/40 backdrop-blur-xs hover:bg-slate-900/20 transition-all duration-300 cursor-pointer"
                         >
                             <div className="flex items-start gap-4 flex-1">
                                 {/* Contenedor del icono con un sutil efecto de luz al hacer hover */}

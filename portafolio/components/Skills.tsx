@@ -117,6 +117,7 @@ export default function Skills() {
                     >
                         Tech Stack
                     </motion.h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2" />
                 </motion.div>
 
                 {/* --- GRID DE CATEGORÍAS (Responsivo) --- */}

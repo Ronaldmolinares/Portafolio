@@ -29,7 +29,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="relative w-full max-w-5xl h-[90vh] md:h-auto md:max-h-[85vh] bg-slate-900/90 border border-slate-800 rounded-2xl overflow-y-auto shadow-2xl flex flex-col z-10"
+                className="relative w-full max-w-5xl h-[90vh] md:h-auto md:max-h-[85vh] bg-slate-900/90 border border-slate-800 rounded-md overflow-y-auto shadow-2xl flex flex-col z-10"
             >
                 {/* Botón Flotante para Cerrar */}
                 <button
@@ -46,7 +46,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                     <div className="md:col-span-5 p-6 sm:p-8 bg-slate-950/40 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col justify-between space-y-8">
                         <div className="space-y-6">
                             {/* Vista previa de la primera imagen */}
-                            <div className="aspect-16/10 w-full rounded-xl overflow-hidden border border-slate-800 bg-slate-900 shadow-md">
+                            <div className="aspect-16/10 w-full rounded-md overflow-hidden border border-slate-800 bg-slate-900 shadow-md">
                                 <ProjectImageCarousel images={project.images} alt={project.title} intervalMs={4000} />
                             </div>
 
