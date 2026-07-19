@@ -17,7 +17,7 @@ export default function ProjectImageCarousel({
     alt,
     className = "h-full w-full",
     imageClassName = "w-full h-full object-cover",
-    intervalMs = 5000,
+    intervalMs = 6000,
 }: ProjectImageCarouselProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -91,8 +91,8 @@ export default function ProjectImageCarousel({
                                 key={dotIndex}
                                 onClick={() => setCurrentIndex(dotIndex)}
                                 className={`h-1.5 rounded-full transition-all duration-300 ${currentIndex === dotIndex
-                                        ? "w-4 bg-purple-500"
-                                        : "w-1.5 bg-slate-500/60 hover:bg-slate-400"
+                                    ? "w-4 bg-purple-500"
+                                    : "w-1.5 bg-slate-500/60 hover:bg-slate-400"
                                     }`}
                             />
                         ))}

@@ -4,11 +4,13 @@ import { useForm, ValidationError } from "@formspree/react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Mail, Send, Loader2 } from 'lucide-react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 
 export default function Contact() {
     // Reemplaza "TU_FORM_ID" con el ID que te da Formspree en su dashboard
-    const [state, handleSubmit] = useForm("TU_FORM_ID");
+    const [state, handleSubmit] = useForm("xzdneqke");
 
     return (
         <section
@@ -133,14 +135,27 @@ export default function Contact() {
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                className="flex-1 flex flex-col items-center justify-center text-center p-8 bg-purple-950/20 border border-purple-500/20 rounded-xl space-y-3"
+                                className="flex-1 flex flex-col items-center justify-center text-center p-8 bg-purple-950/20 border border-purple-500/20 rounded-sm space-y-3"
                             >
                                 <p className="text-xl font-bold text-purple-300">¡Mensaje enviado con éxito!</p>
+
+
+                                {/* Contenedor añadido para controlar el tamaño de la animación */}
+                                {/* <div className="w-80 h-auto aspect-[1010/550]"> */}
+                                <div className="w-48 h-26">
+                                    <DotLottieReact
+                                        src="https://lottie.host/7cbd137f-4a81-4d11-8fb4-ece8f4f6541e/eRCi0KuToP.json"
+                                        loop
+                                        autoplay
+                                    />
+                                </div>
+
                                 <p className="text-sm text-slate-400 max-w-md">
                                     Gracias por escribir. Responderé a tu solicitud tan pronto como sea posible a través del correo que me proporcionaste.
-
                                 </p>
+
                             </motion.div>
+
                         ) : (
                             // Formulario interactivo estándar
                             <form onSubmit={handleSubmit} className="space-y-4 flex-1 flex flex-col justify-between">
