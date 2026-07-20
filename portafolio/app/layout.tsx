@@ -28,9 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${montserrat.variable} ${atkinson.variable} h-full antialiased`}
-      data-scroll-behavior="smooth"
+      lang="es"
+      className={`${montserrat.variable} ${atkinson.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
