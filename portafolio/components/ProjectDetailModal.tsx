@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { X, ExternalLink, Calendar, Users, Cpu, Tag } from "lucide-react";
+import { X, Calendar, Users, Cpu, Tag } from "lucide-react";
 import { FaGithub } from 'react-icons/fa6';
 import { Project } from "./projectsData";
 import ProjectImageCarousel from "./ProjectImageCarousel";
@@ -22,7 +22,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
     }, []);
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-10">
             {/* Fondo oscuro traslúcido con clic para cerrar */}
             <motion.div
                 initial={{ opacity: 0 }}
@@ -38,7 +38,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="relative w-full max-w-5xl h-[90vh] md:h-auto md:max-h-[85vh] bg-slate-900/90 border border-slate-800 rounded-md overflow-y-auto shadow-2xl flex flex-col z-10"
+                className="relative w-full max-w-5xl max-h-[90vh] lg:max-h-[85vh] bg-slate-900/90 border border-slate-800 rounded-md overflow-y-auto shadow-2xl flex flex-col z-10"
             >
                 {/* Botón Flotante para Cerrar */}
                 <button
@@ -48,26 +48,26 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                     <X className="w-5 h-5" />
                 </button>
 
-                {/* Contenido en Grid de Dos Columnas */}
-                <div className="grid grid-cols-1 md:grid-cols-12 h-full">
+                {/* Contenido en Grid: 1 Columna en móvil/médium y 12 Columnas en LG */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 h-full">
 
-                    {/* --- SECCIÓN IZQUIERDA: VISUAL & COLABORADORES (5 Columnas) --- */}
-                    {/* En móvil: order-2 para que aparezca después del texto */}
-                    <div className="order-2 md:order-1 md:col-span-5 p-6 sm:p-8 md:bg-slate-950/40 border-t md:border-t-0 md:border-r border-slate-800 flex flex-col justify-between space-y-8">
+                    {/* --- SECCIÓN IZQUIERDA: VISUAL & COLABORADORES / TECH --- */}
+                    {/* En móvil y tablet (hasta md): order-2 para que aparezca después del texto */}
+                    <div className="order-2 lg:order-1 lg:col-span-5 p-6 sm:p-8 lg:bg-slate-950/40 border-t lg:border-t-0 lg:border-r border-slate-800 flex flex-col justify-between space-y-8">
                         <div className="space-y-6">
-                            {/* Vista previa de la primera imagen */}
+                            {/* Carrusel de Imágenes */}
                             <div className="aspect-16/10 w-full rounded-md overflow-hidden border border-slate-800 bg-slate-900 shadow-md">
                                 <ProjectImageCarousel images={project.images} alt={project.title} intervalMs={4000} />
                             </div>
 
-                            {/* Compañeros de Trabajo / Equipo — solo si hay colaboradores */}
-                            {project.collaborators.length > 0 && (
+                            {/* Equipo de Trabajo o Tecnologías flotantes */}
+                            {project.collaborators.length > 0 ? (
                                 <div className="space-y-3">
                                     <h4 className="text-sm font-atkinson font-semibold tracking-wider text-slate-400 uppercase flex items-center gap-2">
                                         <Users className="w-4 h-4 text-purple-400" />
                                         Equipo de Trabajo
                                     </h4>
-                                    <div className="space-y-2 bg-slate-900/50 p-4 rounded-xl border border-slate-800/60">
+                                    <div className="space-y-2 bg-slate-900/50 p-4 rounded-sm border border-slate-800/60">
                                         {project.collaborators.map((member) => (
                                             <a
                                                 key={member.github}
@@ -82,10 +82,27 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                                         ))}
                                     </div>
                                 </div>
+                            ) : (
+                                <div className="space-y-3">
+                                    <h4 className="text-sm font-atkinson font-semibold tracking-wider text-slate-400 uppercase flex items-center gap-2">
+                                        <Cpu className="w-4 h-4 text-purple-400" />
+                                        Tecnologías y herramientas utilizadas
+                                    </h4>
+                                    <div className="flex flex-wrap gap-2 bg-slate-900/50 p-4 rounded-sm border border-slate-800/60">
+                                        {project.tags.map((tech) => (
+                                            <span
+                                                key={tech}
+                                                className="px-3 py-1.5 text-xs font-mono bg-slate-950 border border-slate-800 rounded-md text-slate-200"
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
                             )}
                         </div>
 
-                        {/* Enlace de código en la parte inferior de la columna */}
+                        {/* Enlace a GitHub */}
                         <div className="pt-4">
                             <a
                                 href={project.github}
@@ -99,11 +116,11 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                         </div>
                     </div>
 
-                    {/* --- SECCIÓN DERECHA: DESCRIPCIÓN PROFUNDA (7 Columnas) --- */}
-                    {/* En móvil: order-1 para que aparezca primero */}
-                    <div className="order-1 md:order-2 md:col-span-7 p-6 sm:p-8 space-y-6 flex flex-col justify-between">
+                    {/* --- SECCIÓN DERECHA: DESCRIPCIÓN PROFUNDA --- */}
+                    {/* En móvil y tablet (hasta md): order-1 para que el título y la descripción aparezcan primero arriba */}
+                    <div className="order-1 lg:order-2 lg:col-span-7 p-6 sm:p-8 space-y-6 flex flex-col justify-between">
                         <div className="space-y-6">
-                            {/* Palabras Clave (Keywords) */}
+                            {/* Palabras Clave */}
                             <div className="flex flex-wrap gap-2">
                                 {project.category.split(' • ').map((kw) => (
                                     <span
@@ -133,23 +150,25 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                             </div>
                         </div>
 
-                        {/* Todas las Tecnologías Usadas */}
-                        <div className="space-y-3 pt-6 border-t border-slate-800">
-                            <h4 className="text-sm font-atkinson font-semibold tracking-wider text-slate-500 uppercase flex items-center gap-2">
-                                <Cpu className="w-4 h-4 text-purple-400" />
-                                Tecnologías y herramientas utilizadas
-                            </h4>
-                            <div className="flex flex-wrap gap-2">
-                                {project.tags.map((tech) => (
-                                    <span
-                                        key={tech}
-                                        className="px-3 py-1.5 text-xs font-mono bg-slate-950 border border-slate-800 rounded-md text-slate-200"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
+                        {/* Tecnologías Usadas en la derecha (Solo si SÍ hubo equipo de trabajo) */}
+                        {project.collaborators.length > 0 && (
+                            <div className="space-y-3 pt-6 border-t border-slate-800">
+                                <h4 className="text-sm font-atkinson font-semibold tracking-wider text-slate-500 uppercase flex items-center gap-2">
+                                    <Cpu className="w-4 h-4 text-purple-400" />
+                                    Tecnologías y herramientas utilizadas
+                                </h4>
+                                <div className="flex flex-wrap gap-2">
+                                    {project.tags.map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="px-3 py-1.5 text-xs font-mono bg-slate-950 border border-slate-800 rounded-md text-slate-200"
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
 
                 </div>
