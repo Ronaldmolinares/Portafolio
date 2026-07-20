@@ -7,7 +7,7 @@ export default function About() {
     return (
         <section
             id="about"
-            className="py-20 lg:py-18 px-6 lg:px-10 relative overflow-hidden bg-slate-950 text-white"
+            className="py-20 lg:py-28 px-6 lg:px-10 mb-20 relative overflow-hidden bg-slate-950 text-white"
         >
             {/* Fondo decorativo central */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-900/5 rounded-full blur-[120px] pointer-events-none" />
@@ -40,10 +40,10 @@ export default function About() {
                     >
                         <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-white via-purple-200 to-indigo-400 leading-tight">
                             About Me
-                            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2" />
+                            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 mx-auto md:mx-0" />
                         </h2>
                         {/* Breve biografía */}
-                        <div className="space-y-4 font-atkinson text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl lg:max-w-none">
+                        <div className="space-y-4 font-atkinson text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl lg:max-w-none text-justify lg:text-left">
                             <p>
                                 Soy un ingeniero de sistemas apasionado con experiencia en el desarrollo de aplicaciones web y productos digitales. Me enfoco en el desarrollo backend y full stack, diseñando soluciones escalables, mantenibles y eficientes con tecnologías modernas.
                             </p>

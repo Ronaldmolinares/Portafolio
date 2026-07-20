@@ -88,7 +88,7 @@ export default function Certifications() {
         <section
             id="certifications"
             ref={sectionRef}
-            className="py-20 lg:py-26 px-6 lg:px-10 bg-slate-950 text-white relative overflow-hidden"
+            className="py-20 lg:py-32 px-6 lg:px-10 bg-slate-950 text-white relative overflow-hidden"
         >
             <div className="max-w-7xl mx-auto relative z-10">
 
@@ -164,7 +164,7 @@ export default function Certifications() {
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-1.5 text-sm text-slate-500 group-hover:text-white transition-colors duration-200 shrink-0 self-end sm:self-center bg-slate-900/40 sm:bg-transparent px-3 py-1.5 sm:p-0 rounded-md border border-slate-800 sm:border-none">
+                            <div className="flex items-center gap-1.5 text-sm text-slate-500 group-hover:text-white transition-colors duration-200 shrink-0 self-start sm:self-center bg-slate-900/40 sm:bg-transparent px-3 py-1.5 sm:p-0 border border-slate-800 sm:border-none ml-[60px] sm:ml-0">
                                 <span>Ver credencial</span>
                                 <ExternalLink className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                             </div>

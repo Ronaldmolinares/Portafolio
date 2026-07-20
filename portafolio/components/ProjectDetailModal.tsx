@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { X, ExternalLink, Calendar, Users, Cpu, Tag } from "lucide-react";
 import { FaGithub } from 'react-icons/fa6';
@@ -12,6 +13,14 @@ interface ProjectDetailModalProps {
 }
 
 export default function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps) {
+    // Evita que la página principal haga scroll mientras el modal esté abierto
+    useEffect(() => {
+        document.body.style.overflow = "hidden";
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, []);
+
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10">
             {/* Fondo oscuro traslúcido con clic para cerrar */}
@@ -43,34 +52,37 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                 <div className="grid grid-cols-1 md:grid-cols-12 h-full">
 
                     {/* --- SECCIÓN IZQUIERDA: VISUAL & COLABORADORES (5 Columnas) --- */}
-                    <div className="md:col-span-5 p-6 sm:p-8 bg-slate-950/40 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col justify-between space-y-8">
+                    {/* En móvil: order-2 para que aparezca después del texto */}
+                    <div className="order-2 md:order-1 md:col-span-5 p-6 sm:p-8 md:bg-slate-950/40 border-t md:border-t-0 md:border-r border-slate-800 flex flex-col justify-between space-y-8">
                         <div className="space-y-6">
                             {/* Vista previa de la primera imagen */}
                             <div className="aspect-16/10 w-full rounded-md overflow-hidden border border-slate-800 bg-slate-900 shadow-md">
                                 <ProjectImageCarousel images={project.images} alt={project.title} intervalMs={4000} />
                             </div>
 
-                            {/* Compañeros de Trabajo / Equipo */}
-                            <div className="space-y-3">
-                                <h4 className="text-sm font-atkinson font-semibold tracking-wider text-slate-400 uppercase flex items-center gap-2">
-                                    <Users className="w-4 h-4 text-purple-400" />
-                                    Equipo de Trabajo
-                                </h4>
-                                <div className="space-y-2 bg-slate-900/50 p-4 rounded-xl border border-slate-800/60">
-                                    {project.collaborators.map((member) => (
-                                        <a
-                                            key={member.github}
-                                            href={member.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center justify-between gap-3 rounded-lg border border-slate-800/60 bg-slate-950/40 px-3 py-2 text-left transition duration-200 hover:border-slate-700 hover:bg-slate-900"
-                                        >
-                                            <span className="text-sm font-medium text-slate-200">{member.name}</span>
-                                            <FaGithub className="h-4 w-4 text-slate-500" />
-                                        </a>
-                                    ))}
+                            {/* Compañeros de Trabajo / Equipo — solo si hay colaboradores */}
+                            {project.collaborators.length > 0 && (
+                                <div className="space-y-3">
+                                    <h4 className="text-sm font-atkinson font-semibold tracking-wider text-slate-400 uppercase flex items-center gap-2">
+                                        <Users className="w-4 h-4 text-purple-400" />
+                                        Equipo de Trabajo
+                                    </h4>
+                                    <div className="space-y-2 bg-slate-900/50 p-4 rounded-xl border border-slate-800/60">
+                                        {project.collaborators.map((member) => (
+                                            <a
+                                                key={member.github}
+                                                href={member.github}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center justify-between gap-3 rounded-lg border border-slate-800/60 bg-slate-950/40 px-3 py-2 text-left transition duration-200 hover:border-slate-700 hover:bg-slate-900"
+                                            >
+                                                <span className="text-sm font-medium text-slate-200">{member.name}</span>
+                                                <FaGithub className="h-4 w-4 text-slate-500" />
+                                            </a>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                         </div>
 
                         {/* Enlace de código en la parte inferior de la columna */}
@@ -88,7 +100,8 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                     </div>
 
                     {/* --- SECCIÓN DERECHA: DESCRIPCIÓN PROFUNDA (7 Columnas) --- */}
-                    <div className="md:col-span-7 p-6 sm:p-8 space-y-6 flex flex-col justify-between">
+                    {/* En móvil: order-1 para que aparezca primero */}
+                    <div className="order-1 md:order-2 md:col-span-7 p-6 sm:p-8 space-y-6 flex flex-col justify-between">
                         <div className="space-y-6">
                             {/* Palabras Clave (Keywords) */}
                             <div className="flex flex-wrap gap-2">

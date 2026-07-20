@@ -93,7 +93,7 @@ export default function Projects() {
                                 <div className="flex items-center gap-4 pt-4">
                                     <button
                                         onClick={() => setSelectedProject(project)}
-                                        className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-sm font-atkinson rounded-lg flex items-center gap-2 transition duration-200 cursor-pointer"
+                                        className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-sm font-atkinson rounded-sm flex items-center gap-2 transition duration-200 cursor-pointer"
                                     >
                                         <Plus className="w-4 h-4 text-purple-400" />
                                         Conoce más
@@ -103,7 +103,7 @@ export default function Projects() {
                                         href={project.github}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="p-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 rounded-lg transition duration-200"
+                                        className="p-2.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 rounded-sm transition duration-200"
                                         title="Ver repositorio"
                                     >
                                         <FaGithub className="w-5 h-5 text-slate-300 hover:text-white" />

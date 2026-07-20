@@ -73,7 +73,7 @@ export default function OtherProjects() {
               <div className="md:col-span-3 flex justify-start md:justify-end items-center gap-3">
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-atkinson tracking-wider rounded-md flex items-center gap-2 transition duration-200 active:scale-95 cursor-pointer"
+                  className="h-9 px-4 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-atkinson tracking-wider rounded-sm flex items-center justify-center gap-2 transition duration-200 active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
                 >
                   <Plus className="w-3.5 h-3.5 text-purple-400" />
                   Conoce más
@@ -83,7 +83,7 @@ export default function OtherProjects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-md text-slate-400 hover:text-white transition duration-200"
+                  className="h-9 w-9 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-sm text-slate-400 hover:text-white transition duration-200 flex items-center justify-center shrink-0"
                   title="Ver repositorio"
                 >
                   <FaGithub className="w-4 h-4" />

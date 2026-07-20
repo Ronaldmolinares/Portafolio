@@ -86,7 +86,7 @@ export default function Skills() {
         <section
             id="skills"
             ref={sectionRef}
-            className="py-20 lg:py-26 px-6 lg:px-10 bg-slate-950 text-white relative overflow-hidden"
+            className="py-20 lg:py-32 px-6 lg:px-10 bg-slate-950 text-white relative overflow-hidden"
         >
             {/* Fondo decorativo sutil */}
             <div className="absolute right-1/4 top-1/3 w-[400px] h-[400px] bg-indigo-900/5 rounded-full blur-[100px] pointer-events-none" />

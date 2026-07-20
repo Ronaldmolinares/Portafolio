@@ -103,7 +103,7 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.8 }}
-                    className="flex justify-center items-center h-75 lg:h-125 order-1 lg:order-2 relative"
+                    className="flex justify-center items-center h-75 lg:h-125 order-1 lg:order-2 relative mt-16 lg:mt-0"
                 >
                     {/* Este div es el contenedor '.wrap' del código original, posicionado en el centro */}
                     <div className="wrapParticles">
