@@ -16,11 +16,11 @@ export const PROJECTS: Project[] = [
     {
         id: 1,
         title: "ByteDental",
-        category: "Fullstack • FastAPI • React",
+        category: "FastAPI • React",
         year: "2025",
-        shortDescription: "Sistema de gestión de clínicas dentales con historiales clínicos SOAP, control de roles y auditoría automatizada.",
+        shortDescription: "Aplicación web desarrollada para administrar procesos clínicos odontológicos mediante historiales SOAP, control de acceso basado en roles y trazabilidad de operaciones.",
         longDescription: "ByteDental es una plataforma full-stack desarrollada a medida para la clínica Oral Center White, diseñada para optimizar la gestión integral de consultorios dentales. El sistema centraliza la administración de pacientes, historiales clínicos bajo el formato SOAP, seguimiento de tratamientos y un control de accesos basado en roles (RBAC). Para garantizar la integridad de los datos, implementa auditorías automatizadas mediante triggers en PostgreSQL. La solución incluye autenticación con Google OAuth, recuperación de contraseñas por OTP, reportería en PDF/JSON, un dashboard analítico y notificaciones por correo electrónico.\n\nEl desarrollo se ejecutó bajo metodologías ágiles a lo largo de 4 sprints, donde desempeñé roles rotativos en frontend, backend, QA, DevOps y liderazgo de proyecto. El ciclo cerró con éxito mediante la entrega formal, documentación técnica detallada, pruebas de validación y la sustentación final del software.",
-        tags: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'Docker', 'Firebase'],
+        tags: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'Firebase'],
         collaborators: [
             { name: 'Camilo Arias', github: 'https://github.com/CamiloAT' },
             { name: 'Karen Peña', github: 'https://github.com/KarenSuarez4' },
@@ -30,17 +30,6 @@ export const PROJECTS: Project[] = [
         github: 'https://github.com/Ronaldmolinares/ByteDental',
         demo: '',
         images: [
-            '/projects/byte-dental/app-photo-1.webp',
-            '/projects/byte-dental/app-photo-11.webp',
-            '/projects/byte-dental/app-photo-10.webp',
-            '/projects/byte-dental/app-photo-4.webp',
-            '/projects/byte-dental/app-photo-5.webp',
-            '/projects/byte-dental/app-photo-6.webp',
-            '/projects/byte-dental/app-photo-7.webp',
-            '/projects/byte-dental/app-photo-8.webp',
-            '/projects/byte-dental/app-photo-9.webp',
-            '/projects/byte-dental/app-photo-2.webp',
-            '/projects/byte-dental/app-photo-3.webp',
         ],
     },
     {

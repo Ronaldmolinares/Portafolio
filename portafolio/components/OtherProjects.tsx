@@ -20,7 +20,7 @@ export default function OtherProjects() {
             Otros Proyectos
           </h2>
           <p className="text-slate-400 text-sm sm:text-base max-w-4xl leading-relaxed">
-            Una vista un poco más amplia de los proyectos más relevantes que he desarrollado a lo largo de mi aprendizaje.
+            Una selección de proyectos desarrollados durante mi formación académica y personal, donde he aplicado diferentes tecnologías, metodologías y enfoques para resolver problemas reales.
           </p>
         </div>
 
