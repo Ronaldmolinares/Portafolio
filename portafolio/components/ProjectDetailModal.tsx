@@ -57,7 +57,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
                         <div className="space-y-6">
                             {/* Carrusel de Imágenes */}
                             <div className="aspect-16/10 w-full rounded-md overflow-hidden border border-slate-800 bg-slate-900 shadow-md">
-                                <ProjectImageCarousel images={project.images} alt={project.title} intervalMs={4000} />
+                                <ProjectImageCarousel key={project.title} images={project.images} alt={project.title} intervalMs={4000} />
                             </div>
 
                             {/* Equipo de Trabajo o Tecnologías flotantes */}

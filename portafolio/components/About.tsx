@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User, Mail, MapPin, Briefcase, FileDown } from "lucide-react";
+import { FileDown } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
     return (
@@ -65,10 +66,13 @@ export default function About() {
                         <div className="relative group">
                             <div className="absolute -inset-1 bg-linear-to-r from-purple-600 to-indigo-600 rounded-full blur opacity-45 group-hover:opacity-75 transition duration-500" />
                             <div className="relative w-28 h-28 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-slate-800 bg-slate-900">
-                                <img
+                                <Image
                                     src="/me.png"
                                     alt="Mi Foto de Perfil"
-                                    className="w-full h-full object-cover hover:grayscale-0 transition duration-300"
+                                    fill
+                                    sizes="(max-width: 640px) 112px, 160px"
+                                    priority
+                                    className="object-cover hover:grayscale-0 transition duration-300"
                                 />
                             </div>
                         </div>
@@ -79,9 +83,6 @@ export default function About() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-slate-900">
                                 {/* Nombre */}
                                 <div className="p-5 flex items-center gap-4 text-left">
-                                    {/* <div className="p-2.5 rounded-xl bg-purple-950/30 border border-purple-500/10 text-purple-400">
-                                        <User className="w-5 h-5" />
-                                    </div> */}
                                     <div>
                                         <p className="text-xs text-slate-500 mb-1.5 font-atkinson tracking-wider">Nombre</p>
                                         <p className="text-sm font-medium text-slate-200">Ronald Samir Molinares Sanabria</p>
@@ -90,9 +91,6 @@ export default function About() {
 
                                 {/* Email */}
                                 <div className="p-5 flex items-center gap-4 text-left">
-                                    {/* <div className="p-2.5 rounded-xl bg-purple-950/30 border border-purple-500/10 text-purple-400">
-                                        <Mail className="w-5 h-5" />
-                                    </div> */}
                                     <div>
                                         <p className="text-xs text-slate-500 mb-1.5 font-atkinson tracking-wider">Email</p>
                                         <p className="text-sm font-medium text-slate-200">samirmolinares24@gmail.com</p>
@@ -104,9 +102,6 @@ export default function About() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-slate-900 border-t border-slate-900">
                                 {/* Ubicación */}
                                 <div className="p-5 flex items-center gap-4 text-left">
-                                    {/* <div className="p-2.5 rounded-xl bg-purple-950/30 border border-purple-500/10 text-purple-400">
-                                        <MapPin className="w-5 h-5" />
-                                    </div> */}
                                     <div>
                                         <p className="text-xs text-slate-500 mb-1.5 font-atkinson tracking-wider">Ubicación</p>
                                         <p className="text-sm font-medium text-slate-200">Bogotá, Colombia</p>
@@ -115,9 +110,6 @@ export default function About() {
 
                                 {/* Disponibilidad */}
                                 <div className="p-5 flex items-center gap-4 text-left">
-                                    {/* <div className="p-2.5 rounded-xl bg-purple-950/30 border border-purple-500/10 text-purple-400">
-                                        <Briefcase className="w-5 h-5" />
-                                    </div> */}
                                     <div>
                                         <p className="text-xs text-slate-500 mb-1.5 font-atkinson tracking-wider">Disponibilidad</p>
                                         <p className="text-sm font-medium text-emerald-400">Abierto a nuevas oportunidades</p>

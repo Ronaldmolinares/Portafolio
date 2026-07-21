@@ -138,7 +138,7 @@ export default function Skills() {
 
                             {/* Tecnologías dentro de la categoría */}
                             <div className="flex flex-wrap gap-3">
-                                {category.items.map((tech, techIndex) => {
+                                {category.items.map((tech) => {
                                     const Icon = tech.icon;
                                     return (
                                         <motion.div
@@ -148,7 +148,6 @@ export default function Skills() {
                                             viewport={{ once: true }}
                                             transition={{
                                                 duration: 0.3,
-                                                // delay: catIndex * 0.1 + techIndex * 0.04,
                                             }}
                                             whileHover={{
                                                 scale: 1.05,
@@ -156,12 +155,14 @@ export default function Skills() {
                                             }}
                                             className="flex items-center gap-2.5 px-4 py-2.5 rounded-sm border border-slate-700/50 bg-slate-900/50 text-white hover:border-[var(--tech-color)] hover:shadow-[0_0_5px_var(--tech-color)] transition-all duration-300 cursor-default"
                                             // Agrega color dinámico al borde y fondo al hacer hover
-                                            style={{
-                                                borderColor: tech.color + "60",
-                                                backgroundColor: tech.color + "08",
-                                                // Pasamos el color de la tecnología como variable CSS para usarla en el hover del icono
-                                                ["--tech-color" as any]: tech.color,
-                                            }}
+                                            style={
+                                                {
+                                                    borderColor: tech.color + "60",
+                                                    backgroundColor: tech.color + "08",
+                                                    "--tech-color": tech.color,
+                                                    // ["--tech-color" as any]: tech.color,
+                                                } as React.CSSProperties
+                                            }
                                         >
                                             {/* El icono se colorea usando la variable CSS solo al hacer hover en el componente padre */}
                                             <Icon

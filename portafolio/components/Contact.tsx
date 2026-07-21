@@ -22,7 +22,7 @@ export default function Contact() {
                 {/* --- ENCABEZADO --- */}
                 <div className="text-center mb-16 flex flex-col items-center space-y-4">
                     <span className="inline-block mb-16 px-4 py-2 text-xs font-atkinson tracking-widest text-purple-300 bg-purple-900/30 rounded-full border border-purple-500/20 backdrop-blur-md">
-                        Let's work together
+                        Let&apos;s work together
                     </span>
                     <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-indigo-400 leading-tight">
                         Contáctame

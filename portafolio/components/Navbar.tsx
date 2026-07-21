@@ -64,7 +64,6 @@ export default function Navbar() {
                     {/* Lista de Navegación principal (Escritorio siempre visible) */}
                     <ul className="hidden sm:flex items-center gap-2">
                         {NAV_ITEMS.map((item) => {
-                            const Icon = item.icon;
                             return (
                                 <li key={item.name}>
                                     <a

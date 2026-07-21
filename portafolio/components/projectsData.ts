@@ -159,7 +159,7 @@ export const OTHER_PROJECTS: Project[] = [
         ],
         github: 'https://github.com/Ronaldmolinares/QUYCA',
         demo: '',
-        images: ['projects/quyca/quyca.webp'],
+        images: ['/projects/quyca/quyca.webp'],
     },
     {
         id: 3,
@@ -172,7 +172,7 @@ export const OTHER_PROJECTS: Project[] = [
         collaborators: [],
         github: 'https://github.com/Ronaldmolinares/DBSCAN',
         demo: '',
-        images: ['projects/dbscan/dbscan.webp'],
+        images: ['/projects/dbscan/dbscan.webp'],
     }
     ,
     {
@@ -186,10 +186,10 @@ export const OTHER_PROJECTS: Project[] = [
         collaborators: [{ name: 'Maria Sogamoso', github: 'https://github.com/maria-sogamoso' }],
         github: 'https://github.com/Ronaldmolinares/Predicci-n-Copa-Mundial-FIFA-1930-2022',
         demo: '',
-        images: ['projects/machine-learning/fifa1.webp',
-            'projects/machine-learning/fifa2.webp',
-            'projects/machine-learning/fifa3.webp',
-            'projects/machine-learning/fifa4.webp'
+        images: ['/projects/machine-learning/fifa1.webp',
+            '/projects/machine-learning/fifa2.webp',
+            '/projects/machine-learning/fifa3.webp',
+            '/projects/machine-learning/fifa4.webp'
         ],
     }
     ,
@@ -204,6 +204,6 @@ export const OTHER_PROJECTS: Project[] = [
         collaborators: [],
         github: 'https://github.com/Ronaldmolinares/Cifrando-y-descifrando',
         demo: '',
-        images: ['projects/criptografia/terminal.webp'],
+        images: ['/projects/criptografia/terminal.webp'],
     }
 ];

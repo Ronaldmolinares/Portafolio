@@ -22,10 +22,6 @@ export default function ProjectImageCarousel({
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        setCurrentIndex(0);
-    }, [images]);
-
-    useEffect(() => {
         if (images.length <= 1) {
             return;
         }
