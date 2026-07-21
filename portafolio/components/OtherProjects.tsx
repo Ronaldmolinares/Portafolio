@@ -38,8 +38,28 @@ export default function OtherProjects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="group flex flex-col bg-[#16161a] border border-slate-800/80 rounded-sm overflow-hidden hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:shadow-purple-950/20"
-              >
+                className="
+group
+flex flex-col
+rounded-sm
+overflow-hidden
+
+border border-slate-800/80
+
+bg-[#16161a]
+
+transition-all duration-300
+
+hover:bg-gradient-to-br
+hover:from-purple-950/25
+hover:via-slate-900
+hover:to-indigo-950/30
+
+hover:border-purple-500/40
+hover:-translate-y-1
+hover:shadow-2xl
+hover:shadow-purple-900/30
+">
                 {/* 1. Header de Imagen / Placeholder */}
                 <div className="group relative w-full h-48 bg-slate-800/50 flex items-center justify-center overflow-hidden border-b border-slate-800/60">
                   {coverImage ? (
@@ -59,13 +79,13 @@ export default function OtherProjects() {
                   )}
 
                   {/* Círculo decorativo superior derecho tipo indicador */}
-                  <div className="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-slate-600/80 group-hover:bg-purple-600 transition-colors duration-300 ease-in-out" />
+                  <div className="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-slate-600/80 group-hover:bg-violet-400 transition-colors duration-300 ease-in-out" />
                 </div>
 
                 {/* 2. Cuerpo del Contenido */}
                 <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                   <div className="space-y-2.5">
-                    <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                    <h3 className="text-xl text-white">
                       {project.title}
                     </h3>
                     <p className="text-slate-400 text-sm line-clamp-2 leading-relaxed">
