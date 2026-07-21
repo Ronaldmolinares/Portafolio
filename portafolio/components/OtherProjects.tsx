@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus } from "lucide-react";
-import { FaGithub } from 'react-icons/fa6';
+import { Plus, ArrowUpRight, Image as ImageIcon } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
+import Image from "next/image";
 import { OTHER_PROJECTS, Project } from "./projectsData";
 import ProjectDetailModal from "./ProjectDetailModal";
 
@@ -11,90 +12,109 @@ export default function OtherProjects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section id="OtherProjects" className="py-10 lg:py-10 px-6 lg:px-10 bg-slate-950 text-white">
-      <div className="max-w-7xl mx-auto">
+    <section id="OtherProjects" className="py-16 px-6 lg:px-10 bg-slate-950 text-white">
+      <div className="max-w-7xl mx-auto space-y-12">
 
         {/* --- ENCABEZADO --- */}
-        <div className="space-y-4 mb-16">
+        <div className="space-y-4">
           <h2 className="text-4xl sm:text-5xl font-atkinson bg-clip-text text-transparent bg-linear-to-r from-white via-purple-200 to-indigo-400 leading-tight">
             Otros Proyectos
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-4xl leading-relaxed">
-            Una selección de proyectos desarrollados durante mi formación académica y personal, donde he aplicado diferentes tecnologías, metodologías y enfoques para resolver problemas reales.
+          <p className="text-slate-400 text-sm sm:text-base max-w-6xl leading-relaxed">
+            Una selección de proyectos desarrollados durante mi formación académica y personal, donde he aplicado diferentes tecnologías, metodologías y enfoques.
           </p>
         </div>
 
-        {/* --- LISTA DE PROYECTOS SIN IMAGEN --- */}
-        <div className="divide-y divide-slate-900 border-t border-b border-slate-900">
-          {OTHER_PROJECTS.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="py-10 grid grid-cols-1 md:grid-cols-12 gap-6 items-center hover:bg-slate-900/10 transition-colors duration-300"
-            >
-              {/* Columna de Detalles Básicos (md: 9 columnas para dar buen espacio) */}
-              <div className="md:col-span-9 space-y-4">
-                {/* Categoría y Año */}
-                <div className="flex items-center gap-3 text-slate-500 text-xs tracking-wider uppercase">
-                  <span className="text-purple-500/80 font-bold">0{index + 1}</span>
-                  <span>•</span>
-                  <span>{project.category}</span>
-                  <span>•</span>
-                  <span>{project.year}</span>
+        {/* --- GRID DE TARJETAS --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {OTHER_PROJECTS.map((project, index) => {
+            // Manejamos si el proyecto tiene imagen en su array o si usamos fallback
+            const coverImage = project.images && project.images.length > 0 ? project.images[0] : null;
+
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="group flex flex-col bg-[#16161a] border border-slate-800/80 rounded-sm overflow-hidden hover:border-slate-700 transition-all duration-300 hover:shadow-xl hover:shadow-purple-950/20"
+              >
+                {/* 1. Header de Imagen / Placeholder */}
+                <div className="group relative w-full h-48 bg-slate-800/50 flex items-center justify-center overflow-hidden border-b border-slate-800/60">
+                  {coverImage ? (
+                    <Image
+                      src={coverImage}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="flex flex-col items-center gap-2 text-slate-600">
+                      <div className="w-12 h-12 rounded-full border border-slate-700/50 flex items-center justify-center bg-slate-900/50">
+                        <ImageIcon className="w-5 h-5 text-slate-500" />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Círculo decorativo superior derecho tipo indicador */}
+                  <div className="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-slate-600/80 group-hover:bg-purple-600 transition-colors duration-300 ease-in-out" />
                 </div>
 
-                {/* Título del Proyecto */}
-                <h3 className="text-2xl sm:text-3xl lg:text-3xl font-atkinson tracking-tight text-slate-100">
-                  {project.title}
-                </h3>
+                {/* 2. Cuerpo del Contenido */}
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="space-y-2.5">
+                    <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-slate-400 text-sm line-clamp-2 leading-relaxed">
+                      {project.shortDescription}
+                    </p>
+                  </div>
 
-                {/* Descripción Corta */}
-                <p className="text-slate-400 text-sm sm:text-base max-w-3xl leading-relaxed">
-                  {project.shortDescription}
-                </p>
+                  {/* Tech Badges (Píldoras redondeadas estilo la imagen) */}
+                  <div className="flex flex-wrap gap-1.5 pt-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 text-xs bg-slate-800/60 text-slate-300 rounded-sm border border-slate-700/40"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                {/* Tags (Mini píldoras tecnológicas) */}
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2.5 py-1 text-[11px] font-mono bg-slate-900 border border-slate-800 rounded text-slate-400"
+                  {/* 3. Footer de la Tarjeta */}
+                  <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between gap-3">
+                    {/* Botón Code / GitHub */}
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white transition-colors py-2 px-1"
                     >
-                      {tag}
-                    </span>
-                  ))}
+                      <FaGithub className="w-4 h-4" />
+                      Code
+                    </a>
+
+                    {/* Botón Live Demo / Modal Details */}
+                    <button
+                      onClick={() => setSelectedProject(project)}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white font-medium text-xs rounded-sm transition-all duration-200 active:scale-95 cursor-pointer shadow-sm shadow-purple-900/50"
+                    >
+                      <span>Conoce más</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-
-              {/* Columna de Botones (md: 3 columnas, alineados a la derecha) */}
-              <div className="md:col-span-3 flex justify-start md:justify-end items-center gap-3">
-                <button
-                  onClick={() => setSelectedProject(project)}
-                  className="h-9 px-4 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-atkinson tracking-wider rounded-sm flex items-center justify-center gap-2 transition duration-200 active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
-                >
-                  <Plus className="w-3.5 h-3.5 text-purple-400" />
-                  Conoce más
-                </button>
-
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="h-9 w-9 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-sm text-slate-400 hover:text-white transition duration-200 flex items-center justify-center shrink-0"
-                  title="Ver repositorio"
-                >
-                  <FaGithub className="w-4 h-4" />
-                </a>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 
-      {/* --- REUTILIZACIÓN DE NUESTRO MODAL DETALLADO --- */}
+      {/* --- MODAL DETALLADO --- */}
       <AnimatePresence>
         {selectedProject && (
           <ProjectDetailModal
