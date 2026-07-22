@@ -43,11 +43,11 @@ export const PROJECTS: Project[] = [
     {
         id: 2,
         title: "ByteDental",
-        category: "FastAPI • React",
+        category: "SOAP Clinical Records • Dental Management",
         year: "2025",
         shortDescription: "Aplicación web desarrollada para administrar procesos clínicos odontológicos mediante historiales SOAP, control de acceso basado en roles y trazabilidad de operaciones.",
         longDescription: "ByteDental es una plataforma full-stack desarrollada a medida para la clínica Oral Center White, diseñada para optimizar la gestión integral de consultorios dentales. El sistema centraliza la administración de pacientes, historiales clínicos bajo el formato SOAP, seguimiento de tratamientos y un control de accesos basado en roles (RBAC). Para garantizar la integridad de los datos, implementa auditorías automatizadas mediante triggers en PostgreSQL. La solución incluye autenticación con Google OAuth, recuperación de contraseñas por OTP, reportería en PDF/JSON, un dashboard analítico y notificaciones por correo electrónico.\n\nEl desarrollo se ejecutó bajo metodologías ágiles a lo largo de 4 sprints, donde desempeñé roles rotativos en frontend, backend, QA, DevOps y liderazgo de proyecto. El ciclo cerró con éxito mediante la entrega formal, documentación técnica detallada, pruebas de validación y la sustentación final del software.",
-        tags: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'Firebase'],
+        tags: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'SQLAlchemy', 'Firebase'],
         collaborators: [
             { name: 'Camilo Arias', github: 'https://github.com/CamiloAT' },
             { name: 'Karen Peña', github: 'https://github.com/KarenSuarez4' },
@@ -175,7 +175,7 @@ export const OTHER_PROJECTS: Project[] = [
         collaborators: [{ name: 'Maria Sogamoso', github: 'https://github.com/maria-sogamoso' }],
         github: 'https://github.com/Ronaldmolinares/Predicci-n-Copa-Mundial-FIFA-1930-2022',
         demo: '',
-        images: ['/projects/machine-learning/fifa1.webp',
+        images: ['/projects/machine-learning/fifa33.webp',
             '/projects/machine-learning/fifa2.webp',
             '/projects/machine-learning/fifa3.webp',
             '/projects/machine-learning/fifa4.webp'
