@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { X, Calendar, Users, Cpu, Tag } from "lucide-react";
 import { FaGithub } from 'react-icons/fa6';
-import { Project } from "./projectsData";
+import { Project } from "@/types/project";
 import ProjectImageCarousel from "./ProjectImageCarousel";
 
 interface ProjectDetailModalProps {

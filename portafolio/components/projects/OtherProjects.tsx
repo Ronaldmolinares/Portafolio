@@ -4,7 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
-import { OTHER_PROJECTS, Project } from "./projectsData";
+import { OTHER_PROJECTS } from "@/data/projects/otherProjects";
+import { Project } from "@/types/project";
 import ProjectDetailModal from "./ProjectDetailModal";
 
 export default function OtherProjects() {

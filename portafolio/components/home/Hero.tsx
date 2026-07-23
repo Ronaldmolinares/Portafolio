@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 // 1. Importamos los estilos SCSS
-import "./ParticleOrb.scss";
+import "../../styles/ParticleOrb.scss";
 
 export default function Hero() {
     // Generar un array de 300 elementos para renderizar las partículas

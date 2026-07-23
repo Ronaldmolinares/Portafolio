@@ -1,5 +1,5 @@
 "use client";
-import Banner from "@/components/Banner";
+import Banner from "@/components/layout/Banner";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
@@ -148,7 +148,7 @@ export default function Skills() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-4xl sm:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-indigo-400 leading-tight"
+                        className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-indigo-400 leading-tight"
                     >
                         Tech Stack
                     </motion.h2>

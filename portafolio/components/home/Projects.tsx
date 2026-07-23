@@ -4,9 +4,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { FaGithub } from 'react-icons/fa6';
-import { PROJECTS, Project } from "./projectsData"; // Ajusta la ruta de importación
-import ProjectDetailModal from "./ProjectDetailModal";
-import ProjectImageCarousel from "./ProjectImageCarousel";
+import { MAIN_PROJECTS } from "@/data/projects/mainProjects";
+import { Project } from "@/types/project";
+import ProjectDetailModal from "../projects/ProjectDetailModal";
+import ProjectImageCarousel from "../projects/ProjectImageCarousel";
 
 export default function Projects() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -40,7 +41,7 @@ export default function Projects() {
 
                 {/* Lista de Proyectos */}
                 <div className="space-y-32">
-                    {PROJECTS.map((project, index) => (
+                    {MAIN_PROJECTS.map((project, index) => (
                         <motion.div
                             key={project.id}
                             initial={{ opacity: 0, y: 40 }}

@@ -46,7 +46,7 @@ html {
   animation: marquee 35s linear infinite;
 }
 
-/* Pausar al pasar el cursor para mejorar accesibilidad y UX */
+/* Pausar al pasar el cursor */
 .animate-marquee:hover {
   animation-play-state: paused;
 }
@@ -62,7 +62,7 @@ html {
   }
 }
 
-/* Animación de Izquierda a Derecha (Inversa) */
+/* Animación de Izquierda a Derecha */
 @keyframes marquee-reverse {
   0% {
     transform: translateX(-50%);
@@ -76,18 +76,14 @@ html {
 .animate-marquee {
   display: flex;
   width: max-content;
-  /* OBLIGATORIO: Permite calcular el ancho total sin colapsar */
   will-change: transform;
-  /* VITAL: Forzado de renderizado por GPU */
   animation: marquee 30s linear infinite;
 }
 
 .animate-marquee-reverse {
   display: flex;
   width: max-content;
-  /* OBLIGATORIO */
   will-change: transform;
-  /* VITAL: Forzado de renderizado por GPU */
   animation: marquee-reverse 30s linear infinite;
 }
 
