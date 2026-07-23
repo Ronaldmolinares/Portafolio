@@ -34,7 +34,6 @@ const ROW_2_TECH = [
     { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
     { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
     { name: "React", icon: SiReact, color: "#61DAFB" },
-    { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
     { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
 ];
 

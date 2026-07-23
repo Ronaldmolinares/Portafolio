@@ -25,7 +25,7 @@ export default function OtherProjects() {
           className="text-center space-y-6"
         >
           <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-white via-purple-200 to-indigo-400 leading-tight">
-            Side Projects
+            Más Proyectos
             <div className="w-24 m-auto h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2" />
           </h2>
           <div className="space-y-4 font-atkinson text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl lg:max-w-none text-justify lg:text-left">
@@ -46,30 +46,8 @@ export default function OtherProjects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="
-                    group
-                    relative
-                    flex flex-col
-                    rounded-sm
-                    overflow-hidden
+                className="group card-premium">
 
-                    border border-slate-800/80
-
-                    inset-0 bg-[radial-gradient(circle_at_center,rgba(120,119,198,0.12),transparent_60%)]
-
-                    transition-all duration-300
-
-                    hover:bg-gradient-to-br
-                    hover:from-purple-950/25
-                    hover:via-slate-900
-                    hover:to-indigo-950/30
-
-                    hover:border-purple-500/40
-                    hover:-translate-y-1
-                    hover:shadow-2xl
-                    hover:shadow-purple-900/30
-                    "
-              >
                 {/* Círculo decorativo superior derecho tipo indicador */}
                 <div className="absolute top-3 right-3 w-2.5 h-2.5 rounded-full bg-slate-600/80 group-hover:bg-emerald-500 transition-colors duration-300 ease-in-out" />
 
@@ -107,7 +85,7 @@ export default function OtherProjects() {
                       className="inline-flex items-center gap-2 text-xs font-semibold text-slate-300 hover:text-white transition-colors py-2 px-1"
                     >
                       <FaGithub className="w-4 h-4" />
-                      Code
+                      Código
                     </a>
 
                     {/* Botón Live Demo / Modal Details */}

@@ -92,3 +92,14 @@ html {
 .animate-marquee-reverse:hover {
   animation-play-state: paused;
 }
+
+@utility card-premium {
+  @apply relative flex flex-col rounded-sm overflow-hidden border border-slate-800/80 inset-0 transition-all duration-300;
+
+  /* Escribimos el degradado de forma nativa para evitar el fallo de Tailwind v4 */
+  background-image: radial-gradient(circle at center, rgba(120, 119, 198, 0.12), transparent 60%);
+
+  &:hover {
+    @apply bg-gradient-to-br from-purple-950/25 via-slate-900 to-indigo-950/30 border-purple-500/40 -translate-y-1 shadow-2xl shadow-purple-900/30;
+  }
+}

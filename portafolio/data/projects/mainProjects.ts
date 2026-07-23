@@ -1,102 +1,237 @@
-import { Project } from "@/types/project";
+import { First_Project } from "@/types/principalProject";
 
-export const MAIN_PROJECTS: Project[] = [
+export const MAIN_PROJECTS: First_Project[] = [
+
     {
         id: 1,
-        title: "SimuBomber Caos Simulation",
-        category: "Caminatas Aleatorias • M/M/1 • Monte Carlo • Dinámica de Sistemas • Basado en Agentes",
-        year: "2026",
-        shortDescription: "Proyecto que modela fenómenos complejos dentro de un entorno de juego, combinando enfoques como caminatas aleatorias, simulación de colas, Monte Carlo, dinámica de sistemas y modelado basado en agentes (ABM).",
-        longDescription: "SimuBomber Caos Simulation es un proyecto de simulación desarrollado en Python que propone una aproximación integral al análisis de sistemas complejos a través de una experiencia tipo juego. Su principal valor está en la integración de cinco metodologías complementarias: Caminatas Aleatorias, Simulación de Colas, Métodos de Monte Carlo, Dinámica de Sistemas y Modelado Basado en Agentes (ABM).\n\nA través de esta combinación, el proyecto permite representar comportamientos emergentes, evaluar escenarios con incertidumbre y analizar interacciones entre múltiples entidades y variables del sistema. Esta arquitectura híbrida fortalece tanto la capacidad de experimentación como la interpretación de resultados, aportando una base sólida para aplicaciones académicas, de investigación y de prototipado en simulación computacional.",
+        slug: 'simubomber-caos-simulation',
+
+        title: 'SimuBomber Caos Simulation',
+        subtitle: 'Simulación de fenómenos complejos dentro de un entorno de juego',
+
+        category: 'Caminatas Aleatorias • M/M/1 • Monte Carlo • Dinámica de Sistemas • Basado en Agentes',
+        year: '2026',
+
+        shortDescription: 'Proyecto que modela fenómenos complejos dentro de un entorno de juego, combinando enfoques como caminatas aleatorias, simulación de colas, Monte Carlo, dinámica de sistemas y modelado basado en agentes (ABM).',
+        longDescription: 'SimuBomber Caos Simulation es un proyecto de simulación desarrollado en Python que propone una aproximación integral al análisis de sistemas complejos a través de una experiencia tipo juego. Su principal valor está en la integración de cinco metodologías complementarias: Caminatas Aleatorias, Simulación de Colas, Métodos de Monte Carlo, Dinámica de Sistemas y Modelado Basado en Agentes (ABM).\n\nA través de esta combinación, el proyecto permite representar comportamientos emergentes, evaluar escenarios con incertidumbre y analizar interacciones entre múltiples entidades y variables del sistema. Esta arquitectura híbrida fortalece tanto la capacidad de experimentación como la interpretación de resultados, aportando una base sólida para aplicaciones académicas, de investigación y de prototipado en simulación computacional.',
+
+        role: 'Desarrollador de Software',
+        duration: '2026',
+
         tags: ['Python'],
+
         collaborators: [
             { name: 'Julian Reyes', github: 'https://github.com/julianReyes-dev' },
             { name: 'Karen Peña', github: 'https://github.com/KarenSuarez4' },
             { name: 'Maria Sogamoso', github: 'https://github.com/maria-sogamoso' },
             { name: 'Stefanny Arias', github: 'https://github.com/StefannyArias17' },
         ],
+
         github: 'https://github.com/Ronaldmolinares/simubomber-caos-simulation',
         demo: '',
+
+        coverImage: '/projects/simu-bomber-caos/simu-bomber-1.webp',
         images: [
-            '/projects/simu-bomber-caos/simu-bomber-1.webp',
-            '/projects/simu-bomber-caos/simu-bomber-2.webp',
-            '/projects/simu-bomber-caos/simu-bomber-3.webp',
-            '/projects/simu-bomber-caos/simu-bomber-4.webp',
-            '/projects/simu-bomber-caos/simu-bomber-5.webp',
-            '/projects/simu-bomber-caos/simu-bomber-6.webp',
-            '/projects/simu-bomber-caos/simu-bomber-7.webp',
-            '/projects/simu-bomber-caos/simu-bomber-8.webp',
+            { src: '/projects/simu-bomber-caos/simu-bomber-2.webp', title: 'SimuBomber Caos Simulation', description: 'SimuBomber Caos Simulation' },
+            { src: '/projects/simu-bomber-caos/simu-bomber-3.webp', title: 'SimuBomber Caos Simulation', description: 'SimuBomber Caos Simulation' },
+            { src: '/projects/simu-bomber-caos/simu-bomber-4.webp', title: 'SimuBomber Caos Simulation', description: 'SimuBomber Caos Simulation' },
+            { src: '/projects/simu-bomber-caos/simu-bomber-5.webp', title: 'SimuBomber Caos Simulation', description: 'SimuBomber Caos Simulation' },
+            { src: '/projects/simu-bomber-caos/simu-bomber-6.webp', title: 'SimuBomber Caos Simulation', description: 'SimuBomber Caos Simulation' },
+            { src: '/projects/simu-bomber-caos/simu-bomber-7.webp', title: 'SimuBomber Caos Simulation', description: 'SimuBomber Caos Simulation' },
+            { src: '/projects/simu-bomber-caos/simu-bomber-8.webp', title: 'SimuBomber Caos Simulation', description: 'SimuBomber Caos Simulation' },
         ],
+
+        challenge: 'Modelar fenómenos complejos dentro de un entorno de juego',
+        solution: 'Integración de cinco metodologías complementarias: Caminatas Aleatorias, Simulación de Colas, Métodos de Monte Carlo, Dinámica de Sistemas y Modelado Basado en Agentes (ABM).',
+
+        results: [
+            'Capacidad de representar comportamientos emergentes',
+            'Evaluación de escenarios con incertidumbre',
+            'Análisis de interacciones entre múltiples entidades y variables del sistema',
+        ],
+
+        learnings: [
+            'Simulación de fenómenos complejos',
+            'Análisis de sistemas complejos',
+            'Modelado basado en agentes (ABM)',
+        ],
+
+        accentColor: '#000000',
     },
+
     {
         id: 2,
-        title: "ByteDental",
-        category: "SOAP Clinical Records • Dental Management",
-        year: "2025",
+        slug: 'bytedental',
+
+        title: 'ByteDental',
+        subtitle: 'ByteDental',
+
+        category: 'SOAP Clinical Records • Dental Management',
+        year: '2025',
+
         shortDescription: "Aplicación web desarrollada para administrar procesos clínicos odontológicos mediante historiales SOAP, control de acceso basado en roles y trazabilidad de operaciones.",
+
         longDescription: "ByteDental surge como respuesta a la necesidad de modernizar y centralizar la gestión de los procesos administrativos y clínicos de los consultorios odontológicos, reemplazando tareas manuales y herramientas dispersas por una plataforma unificada. Desarrollado a medida para la clínica Oral Center White, este sistema full-stack permite administrar pacientes, gestionar historiales clínicos bajo el estándar SOAP, realizar el seguimiento de tratamientos y controlar el acceso de los usuarios mediante un modelo de autorización basado en roles (RBAC).\n\nPara garantizar la integridad y trazabilidad de la información, la plataforma implementa auditorías automáticas mediante triggers en PostgreSQL. Además, incorpora un dashboard con indicadores relevantes para la toma de decisiones, genera reportes en PDF, permite la recuperación de contraseñas mediante códigos OTP, autenticación con Google OAuth y un sistema de notificaciones por correo electrónico, proporcionando una solución integral para la administración de la clínica.\n\nEl desarrollo se ejecutó bajo metodologías ágiles a lo largo de 4 sprints, donde desempeñé roles rotativos en frontend, backend, QA, DevOps y liderazgo de proyecto. El ciclo cerró con éxito mediante la entrega formal, documentación técnica detallada, pruebas de validación y la sustentación final del software.",
+
+        role: 'Desarrollador de Software',
+        duration: '2025',
+
         tags: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'SQLAlchemy', 'Firebase'],
+
         collaborators: [
-            { name: 'Camilo Arias', github: 'https://github.com/CamiloAT' },
+            { name: 'Julian Reyes', github: 'https://github.com/julianReyes-dev' },
             { name: 'Karen Peña', github: 'https://github.com/KarenSuarez4' },
             { name: 'Maria Sogamoso', github: 'https://github.com/maria-sogamoso' },
-            { name: 'Lunna Sosa', github: 'https://github.com/lunna21' },
+            { name: 'Stefanny Arias', github: 'https://github.com/StefannyArias17' },
         ],
+
         github: 'https://github.com/Ronaldmolinares/ByteDental',
-        demo: '',
+        demo: 'https://byte-dental-frontend.vercel.app/',
+
+        coverImage: '/projects/bytedental/bytedental-1.webp',
         images: [
+            { src: '/projects/bytedental/bytedental-2.webp', title: 'ByteDental', description: 'ByteDental' },
+            { src: '/projects/bytedental/bytedental-3.webp', title: 'ByteDental', description: 'ByteDental' },
+            { src: '/projects/bytedental/bytedental-4.webp', title: 'ByteDental', description: 'ByteDental' },
+            { src: '/projects/bytedental/bytedental-5.webp', title: 'ByteDental', description: 'ByteDental' },
+            { src: '/projects/bytedental/bytedental-6.webp', title: 'ByteDental', description: 'ByteDental' },
         ],
+
+        challenge: 'Optimizar y digitalizar procesos clínicos y administrativos para garantizar la integridad de la información y mejorar la experiencia del usuario.',
+        solution: 'Implementar un sistema integral con historiales clínicos SOAP, control de acceso basado en roles, auditorías automáticas, dashboard con indicadores clave y funcionalidades de seguridad como recuperación de contraseñas y autenticación con Google OAuth.',
+
+        results: [
+            'Aplicación web integral para administración de procesos clínicos y administrativos',
+            'Control de acceso basado en roles y trazabilidad de operaciones',
+            'Auditorías automáticas mediante triggers en PostgreSQL',
+            'Dashboard con indicadores relevantes para la toma de decisiones',
+            'Generación de reportes en PDF',
+            'Recuperación de contraseñas mediante códigos OTP',
+            'Autenticación con Google OAuth',
+            'Sistema de notificaciones por correo electrónico',
+        ],
+
+        learnings: [
+            'Metodologías ágiles',
+            'Desarrollo full-stack',
+            'Control de acceso basado en roles',
+            'Auditorías automáticas',
+            'Dashboard con indicadores clave',
+            'Recuperación de contraseñas mediante códigos OTP',
+            'Autenticación con Google OAuth',
+            'Sistema de notificaciones por correo electrónico',
+        ],
+
+        accentColor: '#a1e5f2ff',
     },
+
     {
         id: 3,
-        title: "ConectAgro",
-        category: "E-commerce • Web Development",
-        year: "2025",
+        slug: 'conect-agro',
+
+        title: 'ConectAgro',
+        subtitle: 'ConectAgro',
+
+        category: 'E-commerce • Web Development',
+        year: '2025',
+
         shortDescription: "ConectAgreo es un E-commerce que conecta productores agrícolas con consumidores, facilitando la comercialización de productos frescos mediante una experiencia intuitiva, accesible y optimizada para dispositivos móviles.",
         longDescription: "ConectAgro es una plataforma web de comercio electrónico desarrollada para fortalecer la comercialización de productos agrícolas mediante la conexión directa entre productores y consumidores. El proyecto ofrece una interfaz intuitiva que permite explorar productos, consultar información relevante y gestionar el proceso de compra de manera sencilla.\n\nDurante su desarrollo se aplicaron principios de diseño responsivo, organización modular del código y buenas prácticas de desarrollo frontend para construir una aplicación moderna, accesible y fácil de mantener. El proyecto busca mejorar la experiencia de los usuarios y promover el acceso a mercados digitales para el sector agrícola.",
+
+
+        role: 'Desarrollador de Software',
+        duration: '2025',
+
         tags: ['Docker', 'JavaScript', 'Node.js', 'Express.js', 'HTML', 'CSS', 'MySQL',],
+
         collaborators: [
             { name: 'Karen Peña', github: 'https://github.com/KarenSuarez4' },
             { name: 'Maria Sogamoso', github: 'https://github.com/maria-sogamoso' },
             { name: 'Lunna Sosa', github: 'https://github.com/lunna21' },
             { name: 'Katalina Torres', github: 'https://github.com/Katalinais' },
         ],
+
         github: 'https://github.com/Ronaldmolinares/ConectAgro',
-        demo: '',
+        demo: 'https://conect-agro-7d15s.ondigitalocean.app/',
+
+        coverImage: '/projects/conect-agro/conect-agro-5.webp',
         images: [
-            '/projects/conect-agro/conect-agro-5.webp',
-            '/projects/conect-agro/conect-agro-6.webp',
-            '/projects/conect-agro/conect-agro-8.webp',
-            '/projects/conect-agro/conect-agro-77.webp',
-            '/projects/conect-agro/conect-agro-1.webp',
-            '/projects/conect-agro/conect-agro-2.webp',
-            '/projects/conect-agro/conect-agro-3.webp',
-            '/projects/conect-agro/conect-agro-4.webp',
-            '/projects/conect-agro/conect-agro-9.webp',
-            '/projects/conect-agro/conect-agro-10.webp',
-            '/projects/conect-agro/conect-agro-11.webp',
+            { src: '/projects/conect-agro/conect-agro-1.webp', title: 'ConectAgro', description: 'ConectAgro' },
+            { src: '/projects/conect-agro/conect-agro-2.webp', title: 'ConectAgro', description: 'ConectAgro' },
+            { src: '/projects/conect-agro/conect-agro-3.webp', title: 'ConectAgro', description: 'ConectAgro' },
+            { src: '/projects/conect-agro/conect-agro-4.webp', title: 'ConectAgro', description: 'ConectAgro' },
+            { src: '/projects/conect-agro/conect-agro-6.webp', title: 'ConectAgro', description: 'ConectAgro' },
         ],
+
+        challenge: 'ConectAgro busca eliminar las barreras entre productores agrícolas y consumidores, proporcionando una plataforma que optimiza la comercialización de productos frescos y promueve el desarrollo económico local.',
+        solution: 'ConectAgro integra herramientas de e-commerce, gestión de inventario y comunicación directa entre usuarios, facilitando la compra, venta y distribución eficiente de productos agrícolas.',
+
+        results: ['ConectAgro integra herramientas de e-commerce, gestión de inventario y comunicación directa entre usuarios, facilitando la compra, venta y distribución eficiente de productos agrícolas.',
+            'ConectAgro integra herramientas de e-commerce, gestión de inventario y comunicación directa entre usuarios, facilitando la compra, venta y distribución eficiente de productos agrícolas.',
+            'ConectAgro integra herramientas de e-commerce, gestión de inventario y comunicación directa entre usuarios, facilitando la compra, venta y distribución eficiente de productos agrícolas.',
+            'ConectAgro integra herramientas de e-commerce, gestión de inventario y comunicación directa entre usuarios, facilitando la compra, venta y distribución eficiente de productos agrícolas.',
+            'ConectAgro integra herramientas de e-commerce, gestión de inventario y comunicación directa entre usuarios, facilitando la compra, venta y distribución eficiente de productos agrícolas.',
+        ],
+
+        learnings: ['ConectAgro integra herramientas de e-commerce, gestión de inventario y comunicación directa entre usuarios, facilitando la compra, venta y distribución eficiente de productos agrícolas.',
+            'ConectAgro integra herramientas de e-commerce, gestión de inventario y comunicación directa entre usuarios, facilitando la compra, venta y distribución eficiente de productos agrícolas.',
+            'ConectAgro integra herramientas de e-commerce, gestión de inventario y comunicación directa entre usuarios, facilitando la compra, venta y distribución eficiente de productos agrícolas.',
+            'ConectAgro integra herramientas de e-commerce, gestión de inventario y comunicación directa entre usuarios, facilitando la compra, venta y distribución eficiente de productos agrícolas.',
+            'ConectAgro integra herramientas de e-commerce, gestión de inventario y comunicación directa entre usuarios, facilitando la compra, venta y distribución eficiente de productos agrícolas.',
+        ],
+
+        accentColor: '#abe9f6ff',
     },
+
     {
         id: 4,
-        title: "Balanceador de Cargas",
-        category: "Sistema Distribuido • Docker • Balanceo de Carga L2 ",
-        year: "2025",
+        slug: 'balanceador-de-carga',
+
+        title: 'Balanceador de Carga',
+        subtitle: 'Balanceador de Carga',
+
+        category: 'Balanceador de Carga',
+        year: '2025',
+
         shortDescription: "Balanceador de carga de capa 2 orientado a entornos distribuidos, con visualización y control desde una interfaz web para distribuir tráfico entre servicios, mejorando disponibilidad y rendimiento.",
         longDescription: "Proyecto enfocado en el diseño e implementación de un balanceador de carga de capa 2 (L2) para la distribución de tráfico entre múltiples instancias de servicio dentro de una arquitectura distribuida. La solución aborda objetivos clave de infraestructura: disponibilidad, escalabilidad horizontal y mitigación de puntos únicos de fallo, mediante la asignación equilibrada de solicitudes hacia nodos backend.\n\nA nivel de implementación, el sistema incluye:\n\n • Módulo de lógica de balanceo en JavaScript para la gestión de rutas/distribución de tráfico.\n • Interfaz web (HTML/CSS/JS) para monitoreo básico, interacción y validación visual del comportamiento del balanceador.\n • Contenerización con Docker para estandarizar ejecución, aislar dependencias y facilitar pruebas reproducibles en distintos entornos.",
+
+        role: 'Desarrollador de Software',
+        duration: '2025',
+
         tags: ['JavaScript', 'Node.js', 'Express.js', 'Docker', 'HTML', 'CSS', 'MySQL',],
         collaborators: [
             { name: 'Karen Peña', github: 'https://github.com/KarenSuarez4' },
             { name: 'Lunna Sosa', github: 'https://github.com/lunna21' },
         ],
+
         github: 'https://github.com/Ronaldmolinares/L2-Balanceador-de-cargas',
         demo: '',
+
+        coverImage: '/projects/balanceador-carga/balanceador-1.webp',
         images: [
-            '/projects/balanceador-carga/balanceador-1.webp',
-            '/projects/balanceador-carga/balanceador-2.webp',
-            '/projects/balanceador-carga/balanceador-3.webp',
-            '/projects/balanceador-carga/balanceador-4.webp',
-            '/projects/balanceador-carga/balanceador-5.webp',
+            { src: '/projects/balanceador-carga/balanceador-1.webp', title: 'Balanceador de Carga', description: 'Balanceador de Carga' },
+            { src: '/projects/balanceador-carga/balanceador-2.webp', title: 'Balanceador de Carga', description: 'Balanceador de Carga' },
+            { src: '/projects/balanceador-carga/balanceador-3.webp', title: 'Balanceador de Carga', description: 'Balanceador de Carga' },
+            { src: '/projects/balanceador-carga/balanceador-4.webp', title: 'Balanceador de Carga', description: 'Balanceador de Carga' },
+            { src: '/projects/balanceador-carga/balanceador-5.webp', title: 'Balanceador de Carga', description: 'Balanceador de Carga' },
         ],
+
+        challenge: 'El balanceo de carga eficiente es crucial en arquitecturas distribuidas. La implementación de un balanceador L2 requiere manejar adecuadamente la distribución de tráfico, mantener persistencia de sesiones y asegurar la disponibilidad de los servicios, incluso ante fallos en alguno de los nodos backend.',
+        solution: 'El sistema implementa un módulo central de balanceo que distribuye las solicitudes entrantes entre las instancias de servicio disponibles. Se prioriza la simplicidad operativa y la transparencia, permitiendo a los usuarios monitorear el comportamiento del balanceador a través de una interfaz web. La integración con Docker facilita la replicación y gestión del balanceador en entornos de prueba y producción.',
+
+        results: [
+            'Se implementó un balanceador de carga funcional capaz de distribuir el tráfico entre múltiples servicios.',
+            'La interfaz web permite monitorear el estado del balanceador y las solicitudes gestionadas.',
+            'La contenerización con Docker asegura una implementación consistente en diferentes entornos.',
+        ],
+
+        learnings: [
+            'Comprensión profunda del funcionamiento de balanceadores de carga en entornos distribuidos.',
+            'Experiencia práctica en la configuración y gestión de Docker para orquestación de servicios.',
+            'Desarrollo de interfaces web interactivas para monitoreo y control de sistemas de infraestructura.',
+        ],
+
+        accentColor: '#c27272ff',
     },
 ];
