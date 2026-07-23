@@ -28,3 +28,71 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* --- ANIMACIÓN MARQUEE INFINITO --- */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+/* Pausar al pasar el cursor para mejorar accesibilidad y UX */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Animación de Derecha a Izquierda */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Animación de Izquierda a Derecha (Inversa) */
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  /* OBLIGATORIO: Permite calcular el ancho total sin colapsar */
+  will-change: transform;
+  /* VITAL: Forzado de renderizado por GPU */
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  /* OBLIGATORIO */
+  will-change: transform;
+  /* VITAL: Forzado de renderizado por GPU */
+  animation: marquee-reverse 30s linear infinite;
+}
+
+/* Pausar suavemente si el usuario pasa el mouse sobre la cinta */
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
